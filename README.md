@@ -3,6 +3,12 @@
 **A Practical Guide to Underfitting, Overfitting, and Building Models That Generalize**
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/joedom99/overfitting-for-marketers/blob/main/when_marketing_models_try_too_hard.ipynb)
+[![Python 3.9+](https://img.shields.io/badge/Python-3.9+-blue?logo=python&logoColor=white)](https://www.python.org/)
+[![Made with Jupyter](https://img.shields.io/badge/Made%20with-Jupyter-orange?logo=jupyter&logoColor=white)](https://jupyter.org/)
+[![scikit-learn](https://img.shields.io/badge/scikit--learn-ML-F7931E?logo=scikitlearn&logoColor=white)](https://scikit-learn.org/)
+[![License](https://img.shields.io/badge/License-MIT-yellowgreen)](LICENSE)
+[![Blog](https://img.shields.io/badge/Blog-Marketing%20Data%20Science-2C7873)](https://blog.marketingdatascience.ai)
+
 
 This repository contains the companion Python notebook for my article [*When Marketing Models Try Too Hard*](https://blog.marketingdatascience.ai) on the Marketing Data Science blog. <!-- TODO: replace with live article URL after publication -->
 

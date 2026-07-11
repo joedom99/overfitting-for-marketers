@@ -1,16 +1,15 @@
-# When Marketing Models Try Too Hard
+# Is Your Marketing Model Too Accurate?
 
 **A Practical Guide to Underfitting, Overfitting, and Building Models That Generalize**
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/joedom99/overfitting-for-marketers/blob/main/when_marketing_models_try_too_hard.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/joedom99/overfitting-for-marketers/blob/main/is_your_marketing_model_too_accurate.ipynb)
 [![Python 3.9+](https://img.shields.io/badge/Python-3.9+-blue?logo=python&logoColor=white)](https://www.python.org/)
 [![Made with Jupyter](https://img.shields.io/badge/Made%20with-Jupyter-orange?logo=jupyter&logoColor=white)](https://jupyter.org/)
 [![scikit-learn](https://img.shields.io/badge/scikit--learn-ML-F7931E?logo=scikitlearn&logoColor=white)](https://scikit-learn.org/)
 [![License](https://img.shields.io/badge/License-MIT-yellowgreen)](LICENSE)
 [![Blog](https://img.shields.io/badge/Blog-Marketing%20Data%20Science-2C7873)](https://blog.marketingdatascience.ai)
 
-
-This repository contains the companion Python notebook for my article [*When Marketing Models Try Too Hard*](https://blog.marketingdatascience.ai) on the Marketing Data Science blog. <!-- TODO: replace with live article URL after publication -->
+This repository contains the companion Python notebook for my article [*Is Your Marketing Model Too Accurate?*](https://blog.marketingdatascience.ai) on the Marketing Data Science blog. <!-- TODO: replace with live article URL after publication -->
 
 The article explains why marketing models fail to generalize. This notebook lets you watch it happen.
 
@@ -31,17 +30,18 @@ From there, the notebook demonstrates:
 1. **The Goldilocks principle** visualized with polynomial curve fitting
 2. **Training vs. validation curves** showing exactly where overfitting begins as model complexity increases
 3. **Cross-validation** and why a single train/test split can mislead you by 10 points
-4. **Time-based validation** for chronological marketing data, where shuffled cross-validation claims R² = 0.49 but an honest forward-in-time split reveals R² near zero
-5. **Regularization** (L1) automatically zeroing out 31 of 40 junk CRM columns and improving validation accuracy
+4. **Time-based validation** for chronological marketing data, where shuffled cross-validation claims R² = 0.49 but a true forward-in-time split reveals R² near zero
+5. **Regularization** (L1) automatically zeroing out most of the 40 junk CRM columns and improving validation accuracy
 6. **Feature selection** showing that removing 40 irrelevant variables *improves* prediction by about five points
-7. **Data leakage** via a realistic `contract_sent` field that boosts validation accuracy from 84% to 95% while making the model useless in production
-8. **Marketing's small-n problem**: a 156-week marketing mix modeling simulation where ordinary regression assigns a pure noise variable a larger coefficient than a channel that genuinely drives sales, and Ridge regularization reins it in
+7. **Marketing's small-n problem**: a 156-week marketing mix modeling simulation where ordinary regression assigns a pure noise variable a larger coefficient than a channel that genuinely drives sales, and Ridge regularization reins it in
+8. **Data leakage** via a realistic `contract_sent` field that boosts validation accuracy from 84% to 95% while making the model useless in production
+9. **A final check** on a test set that stays locked away until every modeling decision is made
 
 Every random process is seeded (`SEED = 430`), so your numbers will match the article exactly.
 
 ## Figures
 
-Running the notebook exports all seven figures to a `figures/` folder in a clean, publication-style format (white backgrounds, minimal chrome). These are the same figures used in the article.
+Running the notebook exports its charts to a `figures/` folder in a clean, publication-style format (white backgrounds, minimal chrome). The exported files are named to match the figure numbers in the article (fig1, fig6 through fig8, fig11 through fig14, and fig16). The article's remaining figures are concept illustrations that don't come from code.
 
 ## How to run it
 
@@ -53,12 +53,12 @@ Running the notebook exports all seven figures to a `figures/` folder in a clean
 git clone https://github.com/joedom99/overfitting-for-marketers.git
 cd overfitting-for-marketers
 pip install -r requirements.txt
-jupyter notebook when_marketing_models_try_too_hard.ipynb
+jupyter notebook is_your_marketing_model_too_accurate.ipynb
 ```
 
 ## Requirements
 
-- Python 3.10+
+- Python 3.9+
 - numpy, pandas, matplotlib, scikit-learn (see `requirements.txt`)
 
 ## A note on the data
@@ -69,19 +69,11 @@ All data in this notebook is **synthetic**, and that's deliberate. Because we ge
 
 ```
 .
-├── when_marketing_models_try_too_hard.ipynb   # the companion notebook
+├── is_your_marketing_model_too_accurate.ipynb   # the companion notebook
 ├── requirements.txt
 ├── LICENSE
 └── README.md
 ```
-
-## Related articles
-
-This notebook is part of a broader series on the statistical foundations of marketing analytics at [Marketing Data Science](https://blog.marketingdatascience.ai):
-
-- *Bayesian Statistics Explained for Marketers* explains the prior-belief perspective behind regularization ([companion repo](https://github.com/joedom99/bayesian-stats-for-marketers))
-- *When the Numbers Look Wrong: A Marketer's Guide to Anomaly Detection* covers recognizing when something unusual has happened
-- My four-part marketing mix modeling series covers Robyn and Meridian in depth, including why regularization is fundamental to both
 
 ## About the author
 
@@ -90,4 +82,3 @@ Joe Domaleski is the founder of [Country Fried Creative](https://countryfriedcre
 ## License
 
 MIT License. See [LICENSE](LICENSE) for details.
-
